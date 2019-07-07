@@ -232,10 +232,12 @@ func (client *Client) PostAccountTransfer(
 	transferInfo["amount"] = amount
 	transferInfo["from"] = from
 	transferInfo["to"] = to
+	transferInfo["currency"] = currency
 
 	if optionalParams != nil && len(*optionalParams) > 0 {
 		transferInfo["sub_account"] = (*optionalParams)["sub_account"]
 		transferInfo["instrument_id"] = (*optionalParams)["instrument_id"]
+		transferInfo["to_instrument_id"] = (*optionalParams)["to_instrument_id"]
 	}
 
 	if _, err := client.Request(POST, ACCOUNT_TRANSFER, transferInfo, &r); err != nil {
