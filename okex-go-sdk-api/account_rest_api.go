@@ -232,7 +232,6 @@ func (client *Client) PostAccountTransfer(
 	transferInfo["amount"] = amount
 	transferInfo["from"] = from
 	transferInfo["to"] = to
-	transferInfo["amount"] = amount
 
 	if optionalParams != nil && len(*optionalParams) > 0 {
 		transferInfo["sub_account"] = (*optionalParams)["sub_account"]
