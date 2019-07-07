@@ -208,7 +208,7 @@ func (client *Client) PostAccountWithdrawal(
 	withdrawlInfo["to_address"] = to_address
 	withdrawlInfo["trade_pwd"] = trade_pwd
 
-	if _, err := client.Request(GET, ACCOUNT_WITHRAWAL, withdrawlInfo, &r); err != nil {
+	if _, err := client.Request(POST, ACCOUNT_WITHRAWAL, withdrawlInfo, &r); err != nil {
 		return nil, err
 	}
 
