@@ -238,7 +238,7 @@ func (client *Client) PostAccountTransfer(
 		transferInfo["instrument_id"] = (*optionalParams)["instrument_id"]
 	}
 
-	if _, err := client.Request(GET, ACCOUNT_TRANSFER, transferInfo, &r); err != nil {
+	if _, err := client.Request(POST, ACCOUNT_TRANSFER, transferInfo, &r); err != nil {
 		return nil, err
 	}
 
